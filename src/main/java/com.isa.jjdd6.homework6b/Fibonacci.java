@@ -1,8 +1,12 @@
 package com.isa.jjdd6.homework6b;
 
+import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequestScoped
 public class Fibonacci {
 
      protected List<Integer> count(int word) {

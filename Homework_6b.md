@@ -26,3 +26,4 @@ Napisz aplikację JEE (z użyciem Apache Maven), która będzie generowała cią
 - użycie Bootstrapa do stworzeniu formularzy i ostylowanej strony - 20%
 
 Do zdobycia w sumie 100%.
+
