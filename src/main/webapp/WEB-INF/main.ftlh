@@ -20,8 +20,9 @@
             <br><br>
         </div>
         <div class="row">
+
             <div class="form-inline">
-                <input type="number" min="0" class="form-control form-inline" id="f1" name="fibonacci"
+                <input type="number" class="form-control form-inline" id="f1" name="fibonacci"
                        placeholder="podaj wyraz ciągu">
                 <button type="submit" class="btn btn-success" onclick="verBeforeSend()">Oblicz</button>
                 <button type="reset" class="btn btn-warning" onclick="myReset()">Wyczyść</button>
