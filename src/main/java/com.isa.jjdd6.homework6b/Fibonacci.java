@@ -1,7 +1,5 @@
 package com.isa.jjdd6.homework6b;
 
-import javax.ejb.Stateless;
-import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,18 +7,28 @@ import java.util.List;
 @RequestScoped
 public class Fibonacci {
 
-     protected List<Integer> count(int word) {
+    protected List<Long> count(int word) {
 
-        List<Integer> fibOut = new ArrayList<>();
+        List<Long> fibOut = new ArrayList<>();
+        Long t0 = 0L, t1 = 1L;
+        fibOut.add(t0);
 
-        int t1 = 0, t2 = 1;
+        if (word == 0) {
+            return fibOut;
+        }
 
-        for (int i = 1; i <= word; ++i) {
+        fibOut.add(t1);
 
-            int sum = t1 + t2;
+        if (word == 1) {
+            return fibOut;
+        }
+
+        for (int i = 2; i <= word; ++i) {
+
+            Long sum = t0 + t1;
             fibOut.add(sum);
-            t1 = t2;
-            t2 = sum;
+            t0 = t1;
+            t1 = sum;
         }
         return fibOut;
     }
