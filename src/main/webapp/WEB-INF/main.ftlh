@@ -11,9 +11,9 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="myOnload()">
 <br><br><br><br>
-<form name="fibonacciForm" method="post" action="/">
+<form name="fibonacciForm" method="post">
     <div class="container" align="center">
         <div class="row">
             <h3>Podaj, który wyraz ciągu Fibonacciego chcesz wyświetlić:</h3>
@@ -58,26 +58,31 @@
 
 <script type="text/javascript">
 
+    function myOnload(){
+
+        document.getElementById("f1").focus();
+    }
+
     function verBeforeSend() {
 
         var fib = document.forms["fibonacciForm"]["f1"].value;
 
         if (fib < 0 || fib > 96) {
             window.alert("Błędny wyraz ciągu: " + fib + ". Musi zawierać się w przedziale [0,96]");
-            fib.focus
-        }
-        if (fib == null || fib == "") {
+            myReset();
+        } else if (fib == null || fib == "") {
             window.alert("Coś poszło nie tak, spróbuj ponownie");
-            myReset()
-            location.reload();
-            fib.focus
+            myReset();
+        } else {
+            form.action("/");
         }
     }
 
     function myReset() {
 
-        document.forms["fibonacciForm"].reset()
-        document.getElementById("servletContent").remove()
+        document.forms["fibonacciForm"].reset();
+        document.getElementById("servletContent").remove();
+        document.getElementById("f1").focus();
     }
 
 </script>
